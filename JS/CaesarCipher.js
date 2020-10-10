@@ -23,3 +23,7 @@ const cipher = (str, keys=allShifts) => {
 }
 
 console.log(cipher("Something"))
+
+const decipher = (str, key) => {
+    cipher(str, [26-key-1]
+}
