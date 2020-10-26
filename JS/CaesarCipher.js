@@ -22,8 +22,7 @@ const cipher = (str, keys=allShifts) => {
     return res.map( (r, i) => { return { key: keys[i], result: r.join("") } } )
 }
 
-console.log(cipher("Something"))
-
-const decipher = (str, key) => {
-    cipher(str, [26-key-1]
+const decipher = (str, key=allShifts) => {
+    const keys = key.map( v => 26 - v % 26 )
+    return cipher(str, keys)
 }
