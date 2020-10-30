@@ -37,6 +37,13 @@ const cipher = (str, keys=allShifts, force=false) => {
 }
 
 const decipher = (str, key=allShifts, force=false) => {
+    
+    if(force)
+    {
+        const keys = key.map( v => 0 - v)
+        return cipher(str, keys, true)
+    }
+    
     const keys = key.map( v => 26 - v % 26 )
     return cipher(str, keys)
 }
